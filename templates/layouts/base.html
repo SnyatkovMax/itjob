@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+{% load static %}
+{% include 'layouts/head.html' %}
+<body>
+{% include 'layouts/header.html' %}
+<main>
+    {% block content %}{% endblock content %}
+</main>
+{% include 'layouts/footer.html' %}
+{% include 'layouts/javascript.html' %}
+</body>
+</html>
+

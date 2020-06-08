@@ -1,0 +1,131 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+Главная
+{% endblock title %}
+
+
+{% block content %}
+
+<body>
+
+    <!-- Page Heading Section Start -->
+    <div class="page-heading-section section bg-parallax" data-bg-image="{% static 'images/bg/bg-1.jpg' %}" data-overlay="50">
+        <div class="container">
+            <div class="page-heading-content text-center">
+                <h3 class="title">Pricing Plan</h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                    <li class="breadcrumb-item active">Pricing Plan</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- Page Heading Section End -->
+
+    <!-- Pricing Section Start -->
+    <div class="section section-padding">
+        <div class="container">
+
+            <!-- Pricing Wrap Start -->
+            <div class="pricing-wrap row">
+
+                <!-- Pricing Start -->
+                <div class="col-lg-4 col-md-6 col-sm-8 col-12 mx-auto">
+                    <div class="pricing">
+                        <div class="inner">
+
+                            <div class="head">
+                                <span class="title">Basic</span>
+                                <h2 class="price"><sup>$</sup>0<sup>.00</sup></h2>
+                                <span class="duration">Per Month</span>
+                            </div>
+
+                            <div class="body">
+                                <ul>
+                                    <li>1 job posting</li>
+                                    <li>0 featured job</li>
+                                    <li>Job displayed for 15 days</li>
+                                    <li>Email Support</li>
+                                </ul>
+                            </div>
+
+                            <div class="foot">
+                                <button class="btn">Buy Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Pricing End -->
+
+                <!-- Pricing Start -->
+                <div class="col-lg-4 col-md-6 col-sm-8 col-12 mx-auto">
+                    <div class="pricing">
+                        <div class="inner">
+
+                            <div class="head">
+                                <span class="title">Standard</span>
+                                <h2 class="price"><sup>$</sup>10<sup>.99</sup></h2>
+                                <span class="duration">Per Month</span>
+                            </div>
+
+                            <div class="body">
+                                <ul>
+                                    <li>5 job posting</li>
+                                    <li>1 featured job</li>
+                                    <li>Job displayed for 30 days</li>
+                                    <li>Premium Support 24/7</li>
+                                </ul>
+                            </div>
+
+                            <div class="foot">
+                                <button class="btn">Buy Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Pricing End -->
+
+                <!-- Pricing Start -->
+                <div class="col-lg-4 col-md-6 col-sm-8 col-12 mx-auto">
+                    <div class="pricing">
+                        <div class="inner">
+
+                            <div class="head">
+                                <span class="title">Professional</span>
+                                <h2 class="price"><sup>$</sup>25<sup>.99</sup></h2>
+                                <span class="duration">Per Month</span>
+                            </div>
+
+                            <div class="body">
+                                <ul>
+                                    <li>15 job posting</li>
+                                    <li>4 featured job</li>
+                                    <li>Job displayed for 60 days</li>
+                                    <li>Premium Support 24/7</li>
+                                </ul>
+                            </div>
+
+                            <div class="foot">
+                                <button class="btn">Buy Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Pricing End -->
+
+            </div>
+            <!-- Pricing Wrap End -->
+
+        </div>
+    </div>
+    <!-- Pricing Section End -->
+
+</body>
+
+
+{% endblock content %}
