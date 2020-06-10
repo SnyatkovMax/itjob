@@ -6,6 +6,8 @@ urlpatterns = [
 
     path('', index),
     path('index', index),
+    path('', index2),
+    path('index-2', index2),
 
 
     path('job-list', job_list),

@@ -22,7 +22,7 @@ def sign_up(request):
         if pass1_x != pass2_x:
             data['color_x'] = 'red'
             data['report_x'] = 'Пароли не совпадают!'
-        elif pass1_x =="":
+        elif pass1_x == "":
             # Остальные проверки...
             pass
         else:
@@ -47,6 +47,7 @@ def sign_up(request):
 
         return render(request, 'accounts/reports.html', context=data)
 
+
 def sign_in(request):
     data = dict()
     if request.method == 'GET':
@@ -68,19 +69,23 @@ def sign_in(request):
             login(request, user)
             return redirect('/')
 
+
 def sign_out(request):
     logout(request)
     return redirect('/index')
+
 
 def profile(request):
     data = dict()
     data['title'] = 'Профиль пользователя'
     return render(request, 'accounts/profile.html', context=data)
 
-# def user_profile(request):
+
+# def my_company(request):
 #     data = dict()
-#     data['title'] = 'Профиль пользователя'
-#     return render(request, 'accounts/user-profile.html', context=data)
+#     data['title'] = 'My Company'
+#     return render(request, 'accounts/profile.html', context=data)
+
 
 def ajax_reg(request):
     responce = dict()
@@ -95,14 +100,3 @@ def ajax_reg(request):
     # Check will be here
     # responce['message'] = 'AJAX work fine!!!'
     return JsonResponse(responce)
-
-
-
-# def social_profile(request):
-#     return render(request, 'accounts/social-profile.html')
-# def my_properties(request):
-#     return render(request, 'home/my-properties.html')
-# def favourite_properties(request):
-#     return render(request, 'home/favourite-properties.html')
-# def add_property(request):
-#     return render(request, 'home/add-property.html')

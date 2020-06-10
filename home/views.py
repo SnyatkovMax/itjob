@@ -7,8 +7,8 @@ from django.core.paginator import Paginator
 
 def index(request):
     return render(request, 'home/index.html')
-# def index2(request):
-#     return render(request, 'home/index-2.html')
+def index2(request):
+    return render(request, 'home/index-2.html')
 
 
 def job_list(request):
@@ -17,6 +17,8 @@ def job_single(request):
     return render(request, 'jobs/job-single.html')
 
 
+# def my_company(request):
+#     return render(request, 'accounts/my_company.html')
 def company_list(request):
     return render(request, 'home/company-list.html')
 def company_single(request):
