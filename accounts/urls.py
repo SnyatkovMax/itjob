@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import sign_in, sign_up, sign_out, profile, ajax_reg
 
 
 urlpatterns = [

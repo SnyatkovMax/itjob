@@ -1,26 +1,44 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}
+{{ title }}
+{% endblock title %}
 
 
 {% block content %}
+
+<!-- Page Heading Section Start -->
+<div class="page-heading-section section bg-parallax" data-bg-image="{% static 'images/bg/bg-1.jpg' %}"
+     data-overlay="50">
+    <div class="container">
+        <div class="page-heading-content text-center">
+            <h3 class="title">Sign in</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item active">Sign in</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- Page Heading Section End -->
+
 <div id="content" class="container">
     <h2>{{ title }}</h2>
     <hr>
     <form id="form2" action="/accounts/sign_in" method="post">
         {% csrf_token %}
         <p>
-            <label for="login">Логин:</label><br>
+            <label for="login">Sign in:</label><br>
             <input type="text" id="login" name="login" class="inp" required>
         </p>
         <p>
-            <label for="pass1">Пароль:</label><br>
+            <label for="pass1">Password:</label><br>
             <input type="password" id="pass1" name="pass1" class="inp" required>
         </p>
         <p style="margin-top: 30px">
-            <input type="submit" value="Войти" class="btn btn-success" style="width: 150px">
-            <input type="reset" value="Сбросить" class="btn btn-success" style="width: 150px">
+            <input type="submit" value="Sign in" class="btn btn-success" style="width: 150px">
+            <input type="reset" value="Clear" class="btn btn-success" style="width: 150px">
         </p>
     </form>
     <hr>

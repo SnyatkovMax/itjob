@@ -17,63 +17,7 @@ $(document).ready(() => {
         // alert("login blur - work");
     // );
 
-    $("#pass_1").blur(() => {
-        // alert("login blur - work");
-        let passX = $("#pass_1").val();
-        if (regExp2.test(passX)) {
-            $("#pass1_mess").html("ОК");
-            correct2 = true;
-        } else {
-            correct2 = false;
-            $("#pass1_mess").html("Минимум 8 символов, хотя бы одна Большая буква, одна цифра и символ ( _ - $ # &)")
-
-        }
-        // Проверка на совпадение двух паролей
-        let passY = $("#pass_2").val();
-
-        if (passX == passY ) {
-            $("#pass2_mess").html("ОК");
-            correct3 = true;
-        } else {
-            correct3 = false;
-            $("#pass2_mess").html("Пароли НЕ совпадают")
-
-        }
-
-    });
-
-
-
-    $("#pass_2").blur(() => {
-        // alert("login blur - work");
-        let passX = $("#pass_1").val();
-        let passY = $("#pass_2").val();
-
-        if (passX == passY ) {
-            $("#pass2_mess").html("ОК");
-            correct3 = true;
-        } else {
-            correct3 = false;
-            $("#pass2_mess").html("Пароли НЕ совпадают")
-
-        }
-     });
-
-    $("#email").blur(() => {
-        // alert("login blur - work");
-        let email_ = $("#email").val();
-        if (regExp3.test(email_)) {
-            $("#email_mess").html("ОК");
-            correct4 = true;
-        } else {
-            correct4 = false;
-            $("#email_mess").html("Введите коректный email")
-
-        }
-    });
-
-
-    $("#login").blur(function() {
+     $("#login").blur(function() {
 
        // let loginX = $(this).val();
         let loginX = $("#login").val();
@@ -102,6 +46,58 @@ $(document).ready(() => {
 
     });
 
+    $("#pass_1").blur(() => {
+        // alert("login blur - work");
+        let passX = $("#pass_1").val();
+        if (regExp2.test(passX)) {
+            $("#pass1_mess").html("ОК");
+            correct2 = true;
+        } else {
+            correct2 = false;
+            $("#pass1_mess").html("Минимум 8 символов, хотя бы одна Большая буква, одна цифра и символ ( _ - $ # &)")
+
+        }
+        // Проверка на совпадение двух паролей
+        let passY = $("#pass_2").val();
+
+        if (passX == passY ) {
+            $("#pass2_mess").html("ОК");
+            correct3 = true;
+        } else {
+            correct3 = false;
+            $("#pass2_mess").html("Пароли НЕ совпадают")
+
+        }
+
+    });
+
+    $("#pass_2").blur(() => {
+        // alert("login blur - work");
+        let passX = $("#pass_1").val();
+        let passY = $("#pass_2").val();
+
+        if (passX == passY ) {
+            $("#pass2_mess").html("ОК");
+            correct3 = true;
+        } else {
+            correct3 = false;
+            $("#pass2_mess").html("Пароли НЕ совпадают")
+
+        }
+     });
+
+    $("#email").blur(() => {
+        // alert("login blur - work");
+        let email_ = $("#email").val();
+        if (regExp3.test(email_)) {
+            $("#email_mess").html("ОК");
+            correct4 = true;
+        } else {
+            correct4 = false;
+            $("#email_mess").html("Введите коректный email")
+
+        }
+    });
 
     $("#submit").click(() => {
         if (correct1 == true && correct2 == true && correct3 == true && correct4 == true) {
