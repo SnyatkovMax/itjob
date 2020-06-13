@@ -16,7 +16,7 @@ urlpatterns = [
 
     path('company-list', company_list),
     path('company-single', company_single),
-    path('create-job', create_job),
+    path('create', create),
 
 
     path('about-us', about_us),
@@ -34,6 +34,3 @@ urlpatterns = [
 
 ]
 
-
-#path('', index2),
-# path('index-2', index2),

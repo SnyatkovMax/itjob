@@ -91,15 +91,15 @@
     /*--
         Login & Register Modal
     -----------------------------------*/
-    $('#loginSignupModal').on('show.bs.modal', function (event) {
-        var $button = $(event.relatedTarget),
-            $target = $button.data('target-sub'),
-            $modal = $(this);
-        $modal.find('.nav-link').removeClass('active');
-        $modal.find('.nav-link[href="' + $target + '"]').addClass('active');
-        $modal.find('.tab-pane').removeClass('active show');
-        $modal.find('.tab-pane' + $target).addClass('active show');
-    })
+//    $('#loginSignupModal').on('show.bs.modal', function (event) {
+//        var $button = $(event.relatedTarget),
+//            $target = $button.data('target-sub'),
+//            $modal = $(this);
+//        $modal.find('.nav-link').removeClass('active');
+//        $modal.find('.nav-link[href="' + $target + '"]').addClass('active');
+//        $modal.find('.tab-pane').removeClass('active show');
+//        $modal.find('.tab-pane' + $target).addClass('active show');
+//    })
 
     /*--
         Slick Slider Activation

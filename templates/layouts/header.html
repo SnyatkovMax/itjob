@@ -20,21 +20,28 @@
             <!-- Offcanvas Toggle End -->
 
 
-
-
-
-
             <!-- Header Links Start -->
+
+
             <div class="header-links col-auto order-lg-3">
-                <a href="#" data-toggle="modal" data-target="#loginSignupModal" data-target-sub="#login">Login</a>
+
+                {% if user.username == 'admin' %}
+                <a href="/jobs">Crud for admin</a>
+                <span><----</span>
+                {% endif %}
+
+
+                {% if not user.is_authenticated %}
+                <a href="/accounts/sign_in">Sign In</a>
                 <span>or</span>
-                <a href="#" data-toggle="modal" data-target="#loginSignupModal" data-target-sub="#signup">Sign up</a>
+                <a href="/accounts/sign_up">Sign Up</a>
+                {% else %}
+                <a href="/accounts/sign_out">Sign out</a>
+                <span>or</span>
+                <a href="/accounts/profile">Profile</a>
+                {% endif %}
+
             </div><!-- Header Links End -->
-
-
-
-
-
 
 
             <!-- Header Menu Start -->
@@ -56,7 +63,11 @@
                         <ul class="sub-menu">
                             <li><a href="/company-list">Company List</a></li>
                             <li><a href="/company-single">Company Single</a></li>
-                            <li><a href="/create-job">Create Job</a></li>
+
+                            {% if user.username == 'admin' %}
+                                <a href="/jobs/create">Create Job</a>
+
+                            {% endif %}
                         </ul>
                     </li>
                     <li><a href="#">Pages</a>
@@ -118,7 +129,7 @@
                             <ul class="sub-menu">
                                 <li><a href="/company-list">Company List</a></li>
                                 <li><a href="/company-single">Company Single</a></li>
-                                <li><a href="/create-job">Create Job</a></li>
+                                <li><a href="/create">Create Job</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Pages</a>

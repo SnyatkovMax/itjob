@@ -23,8 +23,8 @@ def company_list(request):
     return render(request, 'home/company-list.html')
 def company_single(request):
     return render(request, 'home/company-single.html')
-def create_job(request):
-    return render(request, 'jobs/create-job.html')
+def create(request):
+    return render(request, 'jobs/create.html')
 
 
 def about_us(request):

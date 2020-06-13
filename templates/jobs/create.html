@@ -1,31 +1,57 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}
+{{ title }}
+{% endblock title %}
 
 
 {% block content %}
-<div id="content" class="container">
-    <h2>{{ title }}</h2>
-    <hr>
-    <div style="text-align: left">
-        <form method="post" action="/goods/create" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div id="form_template">
-                {% for field in form %}
+
+
+<!-- Page Heading Section Start -->
+<div class="page-heading-section section bg-parallax" data-bg-image="{% static 'images/bg/bg-1.jpg' %}"
+     data-overlay="50">
+    <div class="container">
+        <div class="page-heading-content text-center">
+            <h3 class="title">Add a new job</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/company-list">Companies</a></li>
+                <li class="breadcrumb-item active">Create Job</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- Page Heading Section End -->
+
+
+<!-- Create Job Start -->
+<div class="section section-padding">
+    <div id="content" class="container">
+        <h2>{{ title }}</h2>
+        <hr>
+        <div style="text-align: left">
+            <form method="post" action="/jobs/create" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div id="form_template">
+                    {% for field in format %}
                     <div class="form-group">
                         {{ field.label_tag }}
                         <div>{{ field }}</div>
                     </div>
-                {% endfor %}
-            </div>
-            <p style="margin-top: 20px">
-                <input id="b1" type="submit" value="Отправить" class="btn btn-success">
-                <input id="b2" type="reset" value="Очистить" class="btn btn-success">
-            </p>
-        </form>
+                    {% endfor %}
+                </div>
+                <p style="margin-top: 20px">
+                    <input id="b1" type="submit" value="Create Job" class="btn btn-success">
+                    <input id="b2" type="reset" value="Clear" class="btn btn-success">
+                </p>
+            </form>
+        </div>
+        <a href="/job-list">Go to back</a>
+        <hr>
     </div>
-    <a href="/goods">Go to back</a>
-    <hr>
+
 </div>
 <style>
     .form-group input {
@@ -38,5 +64,9 @@
     #b1, #b2 {
         width: 150px;
     }
+
 </style>
+<!-- Create Job End -->
+
+
 {% endblock content %}

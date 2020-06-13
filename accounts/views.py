@@ -9,7 +9,7 @@ from django.http import JsonResponse
 def sign_up(request):
     data = dict()
     if request.method == 'GET':
-        data['title'] = 'New user'
+        data['title'] = 'Sign up'
         return render(request, 'accounts/sign_up.html', context=data)
     elif request.method == 'POST':
         # Извлечение данных их формы
@@ -37,7 +37,7 @@ def sign_up(request):
             user.save()
 
             # Формирования отчета
-            data['title'] = 'Отчет о регистрации'
+            data['title'] = 'Registration Report'
             if user is None:
                 data['color_x'] = 'red'
                 data['report_x'] = 'В регистрации оказано!'
@@ -51,7 +51,7 @@ def sign_up(request):
 def sign_in(request):
     data = dict()
     if request.method == 'GET':
-        data['title'] = 'Авторизация'
+        data['title'] = 'Sign in'
         return render(request, 'accounts/sign_in.html', context=data)
     elif request.method == 'POST':
         # Получение данных
@@ -62,8 +62,8 @@ def sign_in(request):
         user = authenticate(request, username=login_x, password=pass1_x)
         if user is None:
             data['color_x'] = 'red'
-            data['report_x'] = 'Пользователь не найден'
-            data['title'] = 'Отчет об авторизации'
+            data['report_x'] = 'User is not found'
+            data['title'] = 'Authorization Report'
             return render(request, 'accounts/reports.html')
         else:
             login(request, user)
@@ -77,7 +77,7 @@ def sign_out(request):
 
 def profile(request):
     data = dict()
-    data['title'] = 'Профиль пользователя'
+    data['title'] = 'Profile'
     return render(request, 'accounts/profile.html', context=data)
 
 
@@ -88,15 +88,15 @@ def profile(request):
 
 
 def ajax_reg(request):
-    responce = dict()
+    response = dict()
     login_y = request.GET.get('login')
 
     try:
         User.objects.get(username=login_y)
-        responce['message'] = 'логин занят'
+        response['message'] = 'занят'
     except User.DoesNotExist:
-        responce['message'] = 'логин свободен'
+        response['message'] = 'свободен'
 
     # Check will be here
     # responce['message'] = 'AJAX work fine!!!'
-    return JsonResponse(responce)
+    return JsonResponse(response)

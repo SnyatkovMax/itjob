@@ -3367,3 +3367,9 @@ body.offcanvas-open {
 .footer-copyright a:hover {
   text-decoration: underline;
 }
+
+.mess {
+    color: red;
+    font-style: italic;
+    font-size: 10pt;
+}

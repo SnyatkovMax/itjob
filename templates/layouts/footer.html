@@ -9,7 +9,7 @@
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="footer-widget">
                     <div class="footer-widget-about">
-                        <img src="{% static 'images/logo/logo-light.png' %}" alt="">
+                        <img src="{% static 'images/logo/itjob.png' %}" alt="">
                         <p>Lorem ipsum dolor sit amet consecte tur adipisicing elit. Maiores officiis quod quo id
                             inventore quis.</p>
 
@@ -30,11 +30,12 @@
                     <h6 class="title">Quick links</h6>
                     <div class="footer-widget-link">
                         <ul>
-                            <li><a href="#">Post New Job</a></li>
-                            <li><a href="#">Jobs List</a></li>
-                            <li><a href="#">Candidate List</a></li>
-                            <li><a href="#">Employer List</a></li>
-                            <li><a href="#">Browse Categories</a></li>
+                            {% if user.username == 'admin' %}
+                            <li><a href="/jobs/create">Create New Job</a></li>
+                            {% endif %}
+                            <li><a href="job-list">job_list</a></li>
+                            <li><a href="#">Candidate List(В Перспективе)</a></li>
+                            <li><a href="/index">Find your job</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,11 +48,11 @@
                     <h6 class="title">Tranding Jobs</h6>
                     <div class="footer-widget-link">
                         <ul>
-                            <li><a href="#">Designer</a></li>
-                            <li><a href="#">UI & UX Expert</a></li>
-                            <li><a href="#">Develpoer</a></li>
-                            <li><a href="#">iOS developer</a></li>
-                            <li><a href="#">Front-End developer</a></li>
+                            <li><a href="/index">Python</a></li>
+                            <li><a href="/index">PHP</a></li>
+                            <li><a href="/index">JavaScript</a></li>
+                            <li><a href="/index">C++</a></li>
+                            <li><a href="/index">1-C</a></li>
                         </ul>
                     </div>
                 </div>

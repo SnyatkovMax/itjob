@@ -1,0 +1,123 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+
+{% block content %}
+
+
+<!-- Page Heading Section Start -->
+<div class="page-heading-section section bg-parallax" data-bg-image="{% static 'images/bg/bg-1.jpg' %}"
+     data-overlay="50">
+    <div class="container">
+        <div class="page-heading-content text-center">
+            <h3 class="title">Crud operations</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index">Home</a></li>
+                <li class="breadcrumb-item active">Crud</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- Page Heading Section End -->
+
+<div id="content" class="container">
+    <h2>{{ title }}</h2>
+
+    {% if user.username == 'admin'%}
+    <hr>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <a href="/jobs/create" class="btn btn-primary btn-md smoothscroll">Create Job</a>
+    <p></p>
+
+    {% endif %}
+    <div class="pagination" style="margin-top: 20px">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first |</a>
+                <a href="?page={{ page_obj.previous_page_number }}">  << previous << </a>
+            {% endif %}
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}"> >> next >></a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">| last</a>
+            {% endif %}
+        </span>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <table class="jobs" border="1">
+        <tr>
+            <th>Company_logo</th>
+            <th>Job_name</th>
+            <th>City</th>
+            <th>Company</th>
+            <th>Lang</th>
+            <th>Job_type</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Manage</th>
+        </tr>
+        {# {% for post in posts %}#}
+        {# Пагинация #}
+        {% for post in page_obj %}
+        <tr>
+            <td>
+                <img src="/media/{{ post.company_logo }}" width="50" height="50">
+            </td>
+            <td>{{ post.job_name }}</td>
+            <td>{{ post.city }}</td>
+            <td>{{ post.company }}</td>
+            <td>{{ post.lang }}</td>
+            <td>{{ post.job_type }}</td>
+            <td>{{ post.experience }}</td>
+            <td>{{ post.salary }}</td>
+            <td>
+
+                <a href="/jobs/details/{{ post.id }}">Details</a>
+
+                {% if user.username == 'admin' %}
+
+                <a href="/jobs/edit/{{ post.id }}">Edit</a>
+
+                <a href="/jobs/delete/{{ post.id }}">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="pagination" style="margin-top: 20px">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first |</a>
+                <a href="?page={{ page_obj.previous_page_number }}">  << previous << </a>
+            {% endif %}
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}"> >> next >></a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">| last</a>
+            {% endif %}
+        </span>
+    </div>
+    <hr>
+</div>
+{% endblock content %}
