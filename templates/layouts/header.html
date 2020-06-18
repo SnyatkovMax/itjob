@@ -24,21 +24,20 @@
 
 
             <div class="header-links col-auto order-lg-3">
+                {%  if user.username == 'admin'%}
 
-                {% if user.username == 'admin' %}
-                <a href="/jobs">Crud for admin</a>
-                <span><----</span>
+                    <a href="/jobs">CRUD</a>
+                    <span></span>
                 {% endif %}
 
-
                 {% if not user.is_authenticated %}
-                <a href="/accounts/sign_in">Sign In</a>
-                <span>or</span>
-                <a href="/accounts/sign_up">Sign Up</a>
+                    <a href="/accounts/sign_in">Sign In</a>
+                    <span>or</span>
+                    <a href="/accounts/sign_up">Sign Up</a>
                 {% else %}
-                <a href="/accounts/sign_out">Sign out</a>
-                <span>or</span>
-                <a href="/accounts/profile">Profile</a>
+                    <a href="/accounts/sign_out">Sign out</a>
+                    <span>or</span>
+                    <a href="/accounts/profile">Profile</a>
                 {% endif %}
 
             </div><!-- Header Links End -->

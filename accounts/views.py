@@ -9,7 +9,7 @@ from django.http import JsonResponse
 def sign_up(request):
     data = dict()
     if request.method == 'GET':
-        data['title'] = 'Sign up'
+        data['title'] = 'New user'
         return render(request, 'accounts/sign_up.html', context=data)
     elif request.method == 'POST':
         # Извлечение данных их формы
@@ -22,7 +22,7 @@ def sign_up(request):
         if pass1_x != pass2_x:
             data['color_x'] = 'red'
             data['report_x'] = 'Пароли не совпадают!'
-        elif pass1_x == "":
+        elif pass1_x =="":
             # Остальные проверки...
             pass
         else:
@@ -37,7 +37,7 @@ def sign_up(request):
             user.save()
 
             # Формирования отчета
-            data['title'] = 'Registration Report'
+            data['title'] = 'Отчет о регистрации'
             if user is None:
                 data['color_x'] = 'red'
                 data['report_x'] = 'В регистрации оказано!'
@@ -51,7 +51,7 @@ def sign_up(request):
 def sign_in(request):
     data = dict()
     if request.method == 'GET':
-        data['title'] = 'Sign in'
+        data['title'] =  'Sign In'
         return render(request, 'accounts/sign_in.html', context=data)
     elif request.method == 'POST':
         # Получение данных
@@ -62,8 +62,8 @@ def sign_in(request):
         user = authenticate(request, username=login_x, password=pass1_x)
         if user is None:
             data['color_x'] = 'red'
-            data['report_x'] = 'User is not found'
-            data['title'] = 'Authorization Report'
+            data['report_x'] = 'Пользователь не найден'
+            data['title'] = 'Отчет об авторизации'
             return render(request, 'accounts/reports.html')
         else:
             login(request, user)
