@@ -8,6 +8,7 @@
 
 {% block content %}
 {% load static %}
+
 <!-- Page Heading Section Start -->
 <div class="page-heading-section section bg-parallax" data-bg-image="{% static 'images/bg/bg-1.jpg' %}"
      data-overlay="50">
@@ -22,12 +23,16 @@
     </div>
 </div>
 <!-- Page Heading Section End -->
+<p></p>
+<p></p>
+<p></p>
+
 
 <div id="content" class="container">
     <h2>{{ title }}</h2>
     <hr>
     {# onsubmit = Блокировка кнопки отправить на регистрацию #}
-    <form id="form1" action="/accounts/sign_up" method="post" onsubmit="return true">
+    <form id="form1" action="/accounts/sign_up" method="post" onsubmit="return false">
         {% csrf_token %}
         <p>
             <label for="login">Login:</label><br>
